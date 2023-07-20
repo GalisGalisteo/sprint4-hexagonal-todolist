@@ -7,12 +7,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import Task from "../../core/domain/entities/Task";
-import TaskModel from "../../core/repositories/TaskModel";
-import AddTask from "../../core/domain/use-cases/AddTask";
-import DeleteTask from "../../core/domain/use-cases/DeleteTask";
-import UpdateTask from "../../core/domain/use-cases/UpdateTask";
-import TaskRepositoryImpl from "../../infrastructure/repositories/TaskRepositoryImpl";
+import Task from "../../core/domain/entities/Task.js";
+import TaskModel from "../../core/repositories/TaskModel.js";
+import AddTask from "../../core/domain/use-cases/AddTask.js";
+import DeleteTask from "../../core/domain/use-cases/DeleteTask.js";
+import UpdateTask from "../../core/domain/use-cases/UpdateTask.js";
+import TaskRepositoryImpl from "../../infrastructure/repositories/TaskRepositoryImpl.js";
 const taskRepository = new TaskRepositoryImpl();
 export const addTask = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {

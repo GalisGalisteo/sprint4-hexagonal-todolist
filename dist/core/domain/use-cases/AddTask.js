@@ -7,7 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import Task from "../entities/Task";
+import Task from "../entities/Task.js";
 export default class AddTask {
     constructor(taskRepository) {
         this.taskRepository = taskRepository;

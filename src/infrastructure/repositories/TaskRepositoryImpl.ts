@@ -2,7 +2,7 @@ import TaskModel from "../../core/repositories/TaskModel";
 import Task from "../../core/domain/entities/Task";
 import TaskRepository from "../../core/repositories/TaskRepositories";
 
-export default class TaskRepositoryImpl extends Document implements TaskRepository {
+export default class TaskRepositoryImpl implements TaskRepository {
     async addTask(newTask: Task): Promise<void> {
         await TaskModel.create(newTask);
     }

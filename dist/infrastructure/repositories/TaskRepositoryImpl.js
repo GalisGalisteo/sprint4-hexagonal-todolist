@@ -7,8 +7,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import TaskModel from "../../core/repositories/TaskModel";
-export default class TaskRepositoryImpl extends Document {
+import TaskModel from "../../core/repositories/TaskModel.js";
+export default class TaskRepositoryImpl {
     addTask(newTask) {
         return __awaiter(this, void 0, void 0, function* () {
             yield TaskModel.create(newTask);
