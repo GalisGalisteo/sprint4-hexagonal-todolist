@@ -1,5 +1,4 @@
 import TaskRepository from "../../repositories/TaskRepositories";
-import { ObjectId } from "mongoose";
 
 export default class DeleteTask {
     private taskRepository: TaskRepository;

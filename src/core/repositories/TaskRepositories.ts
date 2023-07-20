@@ -1,4 +1,3 @@
-import { ObjectId } from "mongoose";
 import Task from "../domain/entities/Task";
 
 export default interface TaskRepository {

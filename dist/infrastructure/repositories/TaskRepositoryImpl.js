@@ -8,7 +8,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import TaskModel from "../../core/repositories/TaskModel";
-import { Document } from "mongoose";
 export default class TaskRepositoryImpl extends Document {
     addTask(newTask) {
         return __awaiter(this, void 0, void 0, function* () {

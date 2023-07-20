@@ -1,7 +1,6 @@
 import TaskModel from "../../core/repositories/TaskModel";
 import Task from "../../core/domain/entities/Task";
 import TaskRepository from "../../core/repositories/TaskRepositories";
-import { Schema, Document } from "mongoose";
 
 export default class TaskRepositoryImpl extends Document implements TaskRepository {
     async addTask(newTask: Task): Promise<void> {

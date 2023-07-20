@@ -5,7 +5,6 @@ import AddTask from "../../core/domain/use-cases/AddTask";
 import DeleteTask from "../../core/domain/use-cases/DeleteTask";
 import UpdateTask from "../../core/domain/use-cases/UpdateTask";
 import TaskRepositoryImpl from "../../infrastructure/repositories/TaskRepositoryImpl";
-import mongoose from "mongoose";
 
 const taskRepository = new TaskRepositoryImpl();
 
