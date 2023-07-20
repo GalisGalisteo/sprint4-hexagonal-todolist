@@ -1,7 +1,8 @@
 import mongoose from "mongoose";
 import app from "./app";
 
-require('dotenv').config()
+import dotenv from 'dotenv';
+dotenv.config();
 
 const MONGO_URI: string = process.env.MONGO_URI || '';
 const PORT = 8000;
@@ -15,7 +16,7 @@ mongoose
         console.error('Failed to connect to MongoDB:', error);
     })
     .finally(() => {
-    app.listen(PORT, () => {
-        console.log(`Server listening on port ${PORT}`);
-    }); 
-});
+        app.listen(PORT, () => {
+            console.log(`Server listening on port ${PORT}`);
+        });
+    });
