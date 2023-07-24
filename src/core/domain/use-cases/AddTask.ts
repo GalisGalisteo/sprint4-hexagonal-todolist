@@ -1,5 +1,5 @@
-import Task from "../entities/Task";
-import TaskRepository from "../../repositories/TaskRepositories";
+import Task from "../entities/Task.js";
+import TaskRepository from "../../repositories/TaskRepositories.js";
 
 export default class AddTask {
     private taskRepository: TaskRepository;

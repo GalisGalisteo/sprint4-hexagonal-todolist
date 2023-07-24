@@ -34,20 +34,28 @@ export const addTask = (req, res) => __awaiter(void 0, void 0, void 0, function*
     }
 });
 export const deleteTask = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const taskId = req.params._id;
     try {
-        const taskId = req.params._id;
         const deleteTaskUseCase = new DeleteTask(taskRepository);
-        deleteTaskUseCase.delete(taskId);
+        var taskDeleted = yield deleteTaskUseCase.delete(taskId);
         res.status(200).send({
             success: true,
             message: "Task deleted successfully",
         });
     }
     catch (error) {
-        res.status(500).send({
-            success: false,
-            error: "Error deleting the task",
-        });
+        if (taskDeleted === undefined) {
+            res.status(404).send({
+                success: false,
+                error: "Task not found",
+            });
+        }
+        else {
+            res.status(500).send({
+                success: false,
+                error: "Error deleting the task",
+            });
+        }
     }
 });
 export const completeTask = (req, res) => __awaiter(void 0, void 0, void 0, function* () {

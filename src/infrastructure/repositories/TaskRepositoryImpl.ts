@@ -1,6 +1,6 @@
-import TaskModel from "../../core/repositories/TaskModel";
-import Task from "../../core/domain/entities/Task";
-import TaskRepository from "../../core/repositories/TaskRepositories";
+import TaskModel from "../../core/repositories/TaskModel.js";
+import Task from "../../core/domain/entities/Task.js";
+import TaskRepository from "../../core/repositories/TaskRepositories.js";
 
 export default class TaskRepositoryImpl implements TaskRepository {
     async addTask(newTask: Task): Promise<void> {
@@ -20,7 +20,7 @@ export default class TaskRepositoryImpl implements TaskRepository {
     }
 
     async deleteTask(_id: String): Promise<void> {
-        await TaskModel.deleteOne(_id);
+        await TaskModel.findByIdAndDelete(_id);
     }
     
 }

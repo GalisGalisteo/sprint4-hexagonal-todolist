@@ -1,4 +1,4 @@
-import Task from "../domain/entities/Task";
+import Task from "../domain/entities/Task.js";
 
 export default interface TaskRepository {
     addTask(newTask: Task): Promise<void>;

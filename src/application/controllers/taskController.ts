@@ -1,10 +1,10 @@
-import Task from "../../core/domain/entities/Task";
-import TaskModel from "../../core/repositories/TaskModel";
+import Task from "../../core/domain/entities/Task.js";
+import TaskModel from "../../core/repositories/TaskModel.js";
 import { Request, Response } from "express";
-import AddTask from "../../core/domain/use-cases/AddTask";
-import DeleteTask from "../../core/domain/use-cases/DeleteTask";
-import UpdateTask from "../../core/domain/use-cases/UpdateTask";
-import TaskRepositoryImpl from "../../infrastructure/repositories/TaskRepositoryImpl";
+import AddTask from "../../core/domain/use-cases/AddTask.js";
+import DeleteTask from "../../core/domain/use-cases/DeleteTask.js";
+import UpdateTask from "../../core/domain/use-cases/UpdateTask.js";
+import TaskRepositoryImpl from "../../infrastructure/repositories/TaskRepositoryImpl.js";
 
 const taskRepository = new TaskRepositoryImpl();
 
@@ -33,21 +33,28 @@ export const addTask = async (req: Request, res: Response): Promise<void> => {
 }
 
 export const deleteTask = async (req: Request, res: Response): Promise<void> => {
+    const taskId = req.params._id;
+    
     try {
-        const taskId = req.params._id;
         const deleteTaskUseCase = new DeleteTask(taskRepository);
-        deleteTaskUseCase.delete(taskId)
-
+        var taskDeleted = await deleteTaskUseCase.delete(taskId)
         res.status(200).send({
             success: true,
             message: "Task deleted successfully",
         });
 
     } catch (error) {
-        res.status(500).send({
-            success: false,
-            error: "Error deleting the task",
-        });
+        if (taskDeleted === undefined) {
+            res.status(404).send({
+                success: false,
+                error: "Task not found",
+            });
+        } else {
+            res.status(500).send({
+                success: false,
+                error: "Error deleting the task",
+            });
+        }
     }
 }
 

@@ -31,7 +31,7 @@ export default class TaskRepositoryImpl {
     }
     deleteTask(_id) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield TaskModel.deleteOne(_id);
+            yield TaskModel.findByIdAndDelete(_id);
         });
     }
 }
