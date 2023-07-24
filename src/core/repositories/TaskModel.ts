@@ -5,6 +5,6 @@ const TaskSchema = new mongoose.Schema({
     completed: { type: Boolean, default: false }
 })
 
-const TaskModel = mongoose.model('TaskModel', TaskSchema);
+const TaskModel = mongoose.model('Tasks', TaskSchema);
 
 export default TaskModel;

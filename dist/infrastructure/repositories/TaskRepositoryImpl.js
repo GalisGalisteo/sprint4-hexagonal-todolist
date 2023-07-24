@@ -21,12 +21,17 @@ export default class TaskRepositoryImpl {
     }
     findById(_id) {
         return __awaiter(this, void 0, void 0, function* () {
-            return TaskModel.findOne(_id);
+            return TaskModel.findById(_id);
         });
     }
     updateTask(task) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield TaskModel.updateOne(task);
+            yield TaskModel.findByIdAndUpdate(task);
+        });
+    }
+    completeTask(_id) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield TaskModel.findByIdAndUpdate(_id, { completed: true });
         });
     }
     deleteTask(_id) {

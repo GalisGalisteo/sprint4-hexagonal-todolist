@@ -12,15 +12,19 @@ export default class TaskRepositoryImpl implements TaskRepository {
     }
 
     async findById(_id: String): Promise<Task | null> {
-        return TaskModel.findOne(_id);
+        return TaskModel.findById(_id);
     }
 
     async updateTask(task: Task): Promise<void> {
-        await TaskModel.updateOne(task);
+        await TaskModel.findByIdAndUpdate(task);
+    }
+
+    async completeTask(_id: String): Promise<void> {
+        await TaskModel.findByIdAndUpdate(_id, { completed: true });
     }
 
     async deleteTask(_id: String): Promise<void> {
         await TaskModel.findByIdAndDelete(_id);
     }
-    
+
 }

@@ -1,14 +1,13 @@
-import Task from "../entities/Task";
 import TaskRepository from "../../repositories/TaskRepositories.js";
 
-export default class UpdateTask {
+export default class MarkTaskCompleted {
     private taskRepository: TaskRepository;
 
     constructor(taskRepository: TaskRepository) {
         this.taskRepository = taskRepository;
     }
 
-    async update(task: Task) {
-        await this.taskRepository.updateTask(task);
+    async complete(_id: String) {
+        await this.taskRepository.completeTask(_id);
     }
 }

@@ -7,8 +7,4 @@ export default class Task {
         this.title = title;
         this.completed = false;
     }
-
-    markCompleted() {
-        this.completed = true;
-    }
 }  
