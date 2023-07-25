@@ -6,7 +6,6 @@ export const basicAuth = (req: Request, res: Response, next: NextFunction) => {
     console.log("Authorization Header:", authHeader);
 
     if (!authHeader || !authHeader.startsWith("Basic ")) {
-        console.log("Unauthorized: No or Invalid Authorization Header");
         return res.status(401).send("Unauthorized");
     }
 
@@ -21,10 +20,8 @@ export const basicAuth = (req: Request, res: Response, next: NextFunction) => {
 
     // Replace 'your_username' and 'your_password' with your actual credentials
     if (username !== "user" || password !== "1234") {
-        console.log("Unauthorized: Invalid Username or Password");
         return res.status(401).send("Unauthorized");
     }
 
-    console.log("Authentication successful");
     next();
 }
