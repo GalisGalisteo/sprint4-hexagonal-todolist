@@ -5,7 +5,7 @@ import {
     completeTask, 
     findAll, 
     findById 
-} from "../../application/controllers/taskController.js";
+} from "../application/controllers/taskController.js";
 
 const router = express.Router();
 
