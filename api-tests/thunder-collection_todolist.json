@@ -1,0 +1,84 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "todolist",
+    "dateExported": "2023-07-25T09:40:22.855Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "ba0c5a73-202d-4828-9cfa-9052adba6ca0",
+            "colId": "f484e57e-6e01-4d1d-9b48-61a7b45400f2",
+            "containerId": "",
+            "name": "add new task",
+            "url": "http://localhost:8000/api/new",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-07-20T11:05:59.983Z",
+            "modified": "2023-07-24T12:12:12.659Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"prueba 1\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "13c7b4c0-67ed-46be-9ac9-46662f5112f0",
+            "colId": "f484e57e-6e01-4d1d-9b48-61a7b45400f2",
+            "containerId": "",
+            "name": "mark as completed",
+            "url": "http://localhost:8000/api/complete/64be56d588970392d80058b5",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-07-20T14:52:39.192Z",
+            "modified": "2023-07-24T11:03:48.679Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "b771aa7b-a8a8-423b-b52f-1bf72467f88f",
+            "colId": "f484e57e-6e01-4d1d-9b48-61a7b45400f2",
+            "containerId": "",
+            "name": "delete task",
+            "url": "http://localhost:8000/api/delete/64be6a9c479398ab5cf29f52",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2023-07-20T14:57:52.329Z",
+            "modified": "2023-07-25T09:18:23.357Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "8d8f06c2-7957-4f1d-9437-209a2e4907d2",
+            "colId": "f484e57e-6e01-4d1d-9b48-61a7b45400f2",
+            "containerId": "",
+            "name": "find a task",
+            "url": "http://localhost:8000/api/64be56d888970392d80058b8",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2023-07-20T15:07:45.556Z",
+            "modified": "2023-07-24T12:10:24.929Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "fc11b0aa-0d68-4d87-8db1-ae17aa319fca",
+            "colId": "f484e57e-6e01-4d1d-9b48-61a7b45400f2",
+            "containerId": "",
+            "name": "show all tasks",
+            "url": "http://localhost:8000/api/",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2023-07-20T15:22:46.832Z",
+            "modified": "2023-07-20T15:23:03.669Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
