@@ -5,8 +5,8 @@ import {
     completeTask, 
     findAll, 
     findById 
-} from "../application/controllers/taskController.js";
-import {  basicAuth } from "./auth.js";
+} from "../application/controllers/taskController";
+import {  basicAuth } from "./auth";
 
 const router = express.Router();
 

@@ -1,4 +1,4 @@
-import TaskRepository from "../../repositories/TaskRepositories.js";
+import TaskRepository from "../../repositories/TaskRepositories";
 
 export default class DeleteTask {
     private taskRepository: TaskRepository;

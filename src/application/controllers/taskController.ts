@@ -1,17 +1,16 @@
-import Task from "../../core/domain/entities/Task.js";
-import TaskModel from "../../core/repositories/TaskModel.js";
+import TaskModel from "../../core/repositories/TaskModel";
 import { Request, Response } from "express";
-import AddTask from "../../core/domain/use-cases/AddTask.js";
-import DeleteTask from "../../core/domain/use-cases/DeleteTask.js";
-import TaskRepositoryImpl from "../../infrastructure/repositories/TaskRepositoryImpl.js";
-import MarkTaskCompleted from "../../core/domain/use-cases/MarkTaskCompleted.js";
+import AddTask from "../../core/domain/use-cases/AddTask";
+import DeleteTask from "../../core/domain/use-cases/DeleteTask";
+import TaskRepositoryImpl from "../../infrastructure/repositories/TaskRepositoryImpl";
+import MarkTaskCompleted from "../../core/domain/use-cases/MarkTaskCompleted";
 
 const taskRepository = new TaskRepositoryImpl();
 
 export const addTask = async (req: Request, res: Response): Promise<void> => {
     try {
         const task = new TaskModel();
-        const params = req.body;
+        var params = req.body;
 
         task.title = params.title;
 
@@ -24,6 +23,12 @@ export const addTask = async (req: Request, res: Response): Promise<void> => {
         });
 
     } catch (error) {
+        if (params.title.trim() === "") {
+            res.status(404).send({
+                success: false,
+                error: "Please enter a title.",
+            });
+        }
         res.status(500).send({
             success: false,
             error: "Error creating a task"

@@ -1,12 +1,11 @@
 {
   "name": "sprint4_todolist",
-  "type": "module",
   "version": "1.0.0",
   "description": "",
-  "main": "./dist/infrastructure/database/index.js",
+  "main": "./src/infrastructure/database/connection/index.ts",
   "scripts": {
-    "start": "node ./dist/infrastructure/database/index.js",
-    "test": "jest --coverage"
+    "start": "ts-node ./src/infrastructure/database/connection/index.ts",
+    "test": "jest "
   },
   "keywords": [],
   "author": "",

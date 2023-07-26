@@ -1,7 +1,7 @@
 import express from "express";
 import { Request, Response, NextFunction } from "express";
 import bodyParser from 'body-parser';
-import task_routes from './routes.js';
+import task_routes from './routes';
 
 const app = express();
 
