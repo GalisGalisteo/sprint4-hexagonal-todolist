@@ -4,7 +4,7 @@ A simple web-based Todo List application to manage your tasks.
 
 ## Introduction
 
-The Todo List Project is a web application that allows users to create, manage, and organize their tasks. It provides a user-friendly interface to add, edit, complete, and delete tasks.
+The Todo List Project is a web application that allows users to create, manage, and organize their tasks. Add, complete, delete, and find tasks.
 
 ## Features
 
@@ -30,6 +30,7 @@ Follow the steps below to set up and run the Todo List project on your local mac
 ```bash
 git clone https://github.com/GalisGalisteo/sprint4-hexagonal-todolist
 cd sprint4-hexagonal-todolist
+```
 
 ## Install dependencies:
 
@@ -49,8 +50,10 @@ npm start
 
 ## Basic Authentification:
 
+```
 username: user
 password: 1234
+```
 
 ## Exercice documentation folder:
 
