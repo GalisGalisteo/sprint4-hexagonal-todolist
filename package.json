@@ -5,7 +5,7 @@
   "main": "./src/infrastructure/database/connection/index.ts",
   "scripts": {
     "start": "ts-node ./src/infrastructure/database/connection/index.ts",
-    "test": "jest "
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
@@ -13,7 +13,9 @@
   "devDependencies": {
     "@types/express": "^4.17.17",
     "@types/jest": "^29.5.2",
-    "jest": "^29.5.0",
+    "jest": "^29.6.1",
+    "mongodb-memory-server": "^8.13.0",
+    "mongoose": "^7.4.1",
     "nodemon": "^3.0.1",
     "ts-jest": "^29.1.1",
     "ts-loader": "^9.4.4",
@@ -24,7 +26,6 @@
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "helmet": "^7.0.0",
-    "mongoose": "^7.3.4",
     "mongoose-pagination": "^1.0.0"
   }
 }
