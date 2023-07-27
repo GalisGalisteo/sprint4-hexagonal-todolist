@@ -10,7 +10,6 @@ import {  basicAuth } from "./auth";
 
 const router = express.Router();
 
-// router.use(addAuthHeader);
 router.use(basicAuth);
 
 router.post("/new", addTask);
